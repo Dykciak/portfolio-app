@@ -1,5 +1,5 @@
 import SectionText from "./SectionText";
-
+import Link from "next/link";
 const Card = ({
 	title,
 	description,
@@ -8,6 +8,7 @@ const Card = ({
 	tech3,
 	tech4,
 	tech5,
+	link,
 	img,
 }) => {
 	return (
@@ -17,7 +18,11 @@ const Card = ({
 			</div>
 
 			<div className="mt-5">
-				<h3 className="text-white font-bold text-[24px]">{title}</h3>
+				<Link href={link} passHref>
+					<h3 className="text-white font-bold text-[24px] hover:underline">
+						{title}
+					</h3>
+				</Link>
 				<p className="mt-2 text-blue-50 text-[14px]">{description}</p>
 			</div>
 
@@ -47,6 +52,7 @@ const Projects = () => {
 					tech2="react"
 					tech3="typescript"
 					tech4="tailwindcss"
+					link="https://travel-website-chi-lovat.vercel.app/"
 					img={"/putuk.png"}
 				/>
 				<Card
@@ -57,6 +63,7 @@ const Projects = () => {
 					tech3="javascript"
 					tech4="tailwindcss"
 					tech5="#gsap"
+					link="https://animationswebsite.vercel.app/"
 					img={"/redefine.png"}
 				/>
 				<Card
@@ -66,6 +73,7 @@ const Projects = () => {
 					tech2="css"
 					tech3="sass"
 					tech4="javascript"
+					link="https://dykciak.github.io/italyoasis/"
 					img={"/italy-oasis.png"}
 				/>
 			</div>
